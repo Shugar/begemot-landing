@@ -1,0 +1,192 @@
+@import 'nib'
+//@import url(http://fonts.googleapis.com/css?family=Open+Sans)
+
+global-reset()
+
+$helvetica = 'Helvetica Neue', sans-serif
+$black = #272A2C
+
+.clearfix
+  clearfix()
+
+.wrapper
+  widht: 1440px
+  max-width: 1440px
+  position: relative
+  margin: 0 auto
+  .head
+    position: relative
+    background: url('../images/background-head.png') no-repeat
+    background-size: 1440px
+    min-width: 1440px
+    height: 1024px
+    .logo
+      position: absolute
+      top: 110px
+      left: 110px
+    nav
+      float: right
+      margin-right: 30px
+      margin-top: 30px
+      ul
+        li
+          display: inline-block
+          padding-right: 30px
+        a
+          font-family: $helvetica
+          font-weight: 300
+          font-size: 18px
+          color: #fff
+          text-decoration: none
+          
+    p
+      font-family: $helvetica
+      color: #fff
+      font-size: 60px
+      position: absolute
+      top: 488px
+      left: 110px
+  
+  .howitworks
+    position: relative
+    .how
+      height: 432px
+      .four
+        position: absolute
+        top: 72px
+        left: 83px
+      h1
+        width: 310px
+        color: $black
+        font-size: 48px
+        font-family: $helvetica
+        font-weight: bold
+        position: absolute
+        left: 499px
+        top: 72px
+      p
+        width: 550px
+        color: $black
+        font-family: 'Open Sans', sans-serif
+        font-weight: 100
+        font-size: 16px
+        line-height: 20px 
+        position: absolute
+        top: 167px  
+        left: 501px
+      
+    .steps
+        font-family: $helvetica
+        font-size: 20px
+        margin-bottom: 9px
+        .one
+          position: absolute
+          top: 407px
+          left: 40px
+        .two
+          position: absolute
+          top: 407px
+          left: 400px
+        .three
+          position: absolute
+          top: 407px
+          left: 760px
+        .four
+          position: absolute
+          top: 407px
+          left: 1120px
+      
+    .blocks
+      width: 1440px
+      height: 358px
+      p
+        font-family: 'Arial Regular', sans-serif
+        font-weight: 100
+        color: #fff
+        font-size: 14px
+        line-height: 20px
+      h1
+        font-family: $helvetica
+        font-size: 55px
+        color: #fff
+        
+      .block-1
+        position: relative
+        float: left
+        width: 360px
+        height: 358px
+        background: #D8D8D8
+        h1
+          position: absolute
+          top: 72px
+          left: 75px
+        p
+          position: absolute
+          top: 172px
+          left: 75px 
+        
+        .podcherk
+          position: absolute
+          top: 126px
+          left: 79px
+          
+      .block-2
+        position: relative
+        float: left
+        width: 360px
+        height: 358px
+        background: #FB432A
+        h1
+          position: absolute
+          top: 72px
+          left: 47px
+        p
+          position: absolute
+          top: 172px
+          left: 47px 
+          
+        .podcherk
+          position: absolute
+          top: 126px
+          left: 49px
+          
+      .block-3
+        position: relative
+        float: left
+        width: 360px
+        height: 358px
+        background: #B8B8B8
+        h1
+          position: absolute
+          top: 72px
+          left: 77px
+        p
+          position: absolute
+          top: 172px
+          left: 75px 
+        
+        .podcherk
+          position: absolute
+          top: 126px
+          left: 79px
+          
+      .block-4
+        position: relative
+        float: left
+        width: 360px
+        height: 358px
+        background: #A7A7A7
+        h1
+          position: absolute
+          top: 20%
+          left: 75px
+        p
+          position: absolute
+          top: 172px
+          left: 75px 
+        
+        .podcherk
+          position: absolute
+          top: 126px
+          left: 79px
+    
