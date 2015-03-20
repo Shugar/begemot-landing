@@ -2,6 +2,7 @@ doctype html
 head
   meta(name="viewport" content="width=device-width")
   link(rel="stylesheet" href="stylesheets/app.css")
+  link(rel="stylesheet" href="odometer-theme-car.css")
   meta(charset="utf-8")
   title Begemot
 
@@ -11,11 +12,13 @@ head
 
   script.
     require('initialize');
+    require('odometer');
+    require('main');
   
 
 body
-  .wrapper
-    .head
+  .head
+    .container
       img.logo(src="images/logo_narrow.png")
       nav
         ul
@@ -28,12 +31,13 @@ body
           li 
             a(href="#contact") Contact
       p 
-        |Fantastic Mobile Design,
+        | Fantastic Mobile Design,
         br
         |Profound Business Analysis,
         br
         |and a ‘Wow’ Factor for Your App
 
+  .wrapper
     .howitworks
       .how
         img.four(src="images/4.png")
@@ -157,20 +161,20 @@ body
 
     .statistic
       .one
-        p.number.odometer 12
+        p.number.odometer.od1 
         p.text countries we work with
       .two
-        p.number 39
+        p.number.odometer.od2
         p.text completed projects
       .three
-        p.number 4
+        p.number.odometer.od3
         p.text years of excellence
       .four
-        p.number 6 000 000
+        p.number.odometer.od4
         p.text 
           |times our apps 
           br
           | have been installed
       .five
-        p.number 10
+        p.number.odometer.od5
         p.text experts

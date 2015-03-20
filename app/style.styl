@@ -10,44 +10,128 @@ $black = #272A2C
 .clearfix
   clearfix()
 
+font = "Helvetica Neue","Helvetica", Sans, Arial
+
+bold(font-size = 13px, line-height = 21px)
+  font: 700 font-size/line-height font
+  -webkit-font-smoothing: antialiased
+
+thin(font-size = 13px, line-height = 21px)
+  font: 200 font-size/line-height font
+  -webkit-font-smoothing: antialiased
+
+light(font-size = 13px, line-height = 21px)
+  font: 300 font-size/line-height font
+  -webkit-font-smoothing: antialiased
+
+regular(font-size = 13px, line-height = 21px)
+  font: 400 font-size/line-height font
+  -webkit-font-smoothing: antialiased
+
+medium(font-size = 13px, line-height = 21px)
+  font: 500 font-size/line-height font
+  -webkit-font-smoothing: antialiased
+
+
+
+mobile()
+  @media only screen and (max-width: 699px)
+    {block}
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2 / 3)
+    {block}
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40 / 71)
+    {block}
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)
+    {block}
+
+tablet()
+  @media screen and (min-width: 700px) and (max-width: 890px)
+    {block}
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait)
+    {block}
+
+small_screen()
+  @media only screen and (min-device-width: 1025px) and (max-device-width: 1199px) and (orientation: portrait)
+    {block}
+
+hd()
+  @media only screen and (min-width: 1200px)
+    {block}
+
+
+
+.container
+  max-width 1440px
+  position relative
+  margin 0 auto
+  clearfix()
+
+.head
+  position: relative
+  height: 1024px
+  min-height: 600px
+  height: 100vh
+  background: #FB4739
+  background: url('../images/background-head.jpg') no-repeat
+  background-size: cover
+  .container
+    // background: url('../images/background-head.jpg') no-repeat
+    // background-size: cover
+    height: 1024px
+    min-height: 600px
+    height: 100vh
+  .logo
+    position: absolute
+    top: 110px
+    left: 110px
+    +tablet()
+      top: 40px
+      height: 10vh
+    +mobile()
+      top: 70px
+      height: 10vh
+      left: 50px
+    
+  nav
+    float: right
+    margin-right: 30px
+    margin-top: 30px
+    +mobile()
+      display: none
+    ul
+      li
+        display: inline-block
+        padding-right: 30px
+      a
+        font-family: $helvetica
+        font-weight: 300
+        font-size: 18px
+        color: #fff
+        text-decoration: none
+        
+  p
+    font-family: $helvetica
+    color: #fff
+    regular 40px 60px
+    position: absolute
+    bottom: 20%
+    left: 110px
+    +hd()
+      regular 60px 76px
+    +mobile()
+      regular 20px 46px
+      left: 50px
+      line-height: 45px
+      
+      
+
+
 .wrapper
-  widht: 1440px
+  widht: 100%
+  overflow: hidden
   max-width: 1440px
   position: relative
   margin: 0 auto
-  .head
-    position: relative
-    background: url('../images/background-head.png') no-repeat
-    background-size: 1440px
-    min-width: 1440px
-    height: 1024px
-    .logo
-      position: absolute
-      top: 110px
-      left: 110px
-    nav
-      float: right
-      margin-right: 30px
-      margin-top: 30px
-      ul
-        li
-          display: inline-block
-          padding-right: 30px
-        a
-          font-family: $helvetica
-          font-weight: 300
-          font-size: 18px
-          color: #fff
-          text-decoration: none
-          
-    p
-      font-family: $helvetica
-      color: #fff
-      font-size: 60px
-      position: absolute
-      line-height: 74px
-      top: 478px
-      left: 110px
   
   .howitworks
     position: relative
@@ -99,8 +183,16 @@ $black = #272A2C
           left: 1120px
       
     .blocks
-      width: 1440px
-      height: 358px
+      width: 100vw
+      height: 25vw
+      overflow: hidden
+      whitespace: nowrap
+      +tablet()
+        width: 100vw
+        height: 100vw
+      +mobile()
+        width: 100vw
+        height: 100vw
       p
         font-family: 'Arial Regular', sans-serif
         font-weight: 100
@@ -114,18 +206,32 @@ $black = #272A2C
         
       .block-1
         position: relative
-        float: left
-        width: 360px
-        height: 358px
+        display: inline-block
+        whitespace: nowrap
+        width: 25vw
+        height: 25vw
+        +tablet()
+          width: 50vw
+          height: 50vw
+        +mobile()
+          width: 100vw
+          height: 100vw
         background: #D8D8D8
         h1
           position: absolute
           top: 72px
           left: 75px
         p
+          
           position: absolute
-          top: 172px
-          left: 75px 
+          top: 50%
+          left: 50%
+          transform: translateX(-50%)
+          font-size: 1.2vw
+          line-height: 1.4vw 
+          +mobile()
+            font-size: 20px
+            line-height: 25px
         
         .podcherk
           position: absolute
@@ -134,9 +240,16 @@ $black = #272A2C
           
       .block-2
         position: relative
-        float: left
-        width: 360px
-        height: 358px
+        display: inline-block
+        whitespace: nowrap
+        width: 25vw
+        height: 25vw
+        +tablet()
+          width: 50vw
+          height: 50vw
+        +mobile()
+          width: 100vw
+          height: 100vw
         background: #FB432A
         h1
           position: absolute
@@ -154,9 +267,16 @@ $black = #272A2C
           
       .block-3
         position: relative
-        float: left
-        width: 360px
-        height: 358px
+        display: inline-block
+        whitespace: nowrap
+        width: 25vw
+        height: 25vw
+        +tablet()
+          width: 50vw
+          height: 50vw
+        +mobile()
+          width: 100vw
+          height: 100vw
         background: #B8B8B8
         h1
           position: absolute
@@ -174,9 +294,16 @@ $black = #272A2C
           
       .block-4
         position: relative
-        float: left
-        width: 360px
-        height: 358px
+        display: inline-block
+        whitespace: nowrap
+        width: 25vw
+        height: 25vw
+        +tablet()
+          width: 50vw
+          height: 50vw
+        +mobile()
+          width: 100vw
+          height: 100vw
         background: #A7A7A7
         h1
           position: absolute
@@ -261,7 +388,7 @@ $black = #272A2C
           color: #A3A0A0
   
   .statistic
-    background-color: #FBFBFB
+    background-color: #F4F4F4
     min-width: 1440px
     position: relative
     height: 527px
