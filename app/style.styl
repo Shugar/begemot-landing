@@ -74,6 +74,10 @@ hd()
   background: #FB4739
   background: url('../images/background-head.jpg') no-repeat
   background-size: cover
+  +mobile()
+    background: url('../images/123.png') no-repeat #FB4739
+    background-size: cover
+    background-position: -120% 0%
   .container
     // background: url('../images/background-head.jpg') no-repeat
     // background-size: cover
@@ -90,7 +94,8 @@ hd()
     +mobile()
       top: 70px
       height: 10vh
-      left: 50px
+      left: 35px
+      
     
   nav
     float: right
@@ -120,20 +125,11 @@ hd()
       regular 60px 76px
     +mobile()
       regular 20px 46px
-      left: 50px
-      line-height: 45px
+      left: 35px
+      line-height: 35px
       
       
-
-
-.wrapper
-  widht: 100%
-  overflow: hidden
-  max-width: 1440px
-  position: relative
-  margin: 0 auto
-  
-  .howitworks
+.howitworks
     position: relative
     .how
       height: 432px
@@ -141,30 +137,53 @@ hd()
         position: absolute
         top: 72px
         left: 83px
+        +mobile()
+          display: none
+        
       h1
         width: 310px
         color: $black
-        font-size: 48px
+        bold 48px 48px
         font-family: $helvetica
         font-weight: bold
         position: absolute
         left: 499px
         top: 72px
+        +hd()
+          bold 48px 48px
+        +tablet()
+          left: 409px
+        +mobile()
+          left: 43px
       p
-        width: 550px
+        
         color: $black
         font-family: 'Open Sans', sans-serif
         font-weight: 100
-        font-size: 16px
+        regular: 16px 16px
         line-height: 20px 
         position: absolute
         top: 167px  
         left: 501px
+        +hd()
+          font-size: 16px 16px
+        +tablet()
+          left: 410px
+          font-size: 17px
+          width: 45vw
+        +mobile()
+          left: 45px
+          width: 76vw
+        
       
     .steps
         font-family: $helvetica
         font-size: 20px
         margin-bottom: 9px
+        +tablet()
+          display: none
+        +mobile()
+          display: none
         .one
           position: absolute
           top: 407px
@@ -206,7 +225,7 @@ hd()
         
       .block-1
         position: relative
-        display: inline-block
+        float: left
         whitespace: nowrap
         width: 25vw
         height: 25vw
@@ -214,8 +233,8 @@ hd()
           width: 50vw
           height: 50vw
         +mobile()
-          width: 100vw
-          height: 100vw
+          width: 50vw
+          height: 50vw
         background: #D8D8D8
         h1
           position: absolute
@@ -229,10 +248,14 @@ hd()
           transform: translateX(-50%)
           font-size: 1.2vw
           line-height: 1.4vw 
+          +hd()
+            font-size: 1vw
+            line-height: 20px
           +mobile()
-            font-size: 20px
-            line-height: 25px
-        
+            font-size: 2.5vw
+            line-height: 20px
+          +tablet()
+            regular 20px 25px
         .podcherk
           position: absolute
           top: 126px
@@ -240,7 +263,7 @@ hd()
           
       .block-2
         position: relative
-        display: inline-block
+        float: left
         whitespace: nowrap
         width: 25vw
         height: 25vw
@@ -248,26 +271,38 @@ hd()
           width: 50vw
           height: 50vw
         +mobile()
-          width: 100vw
-          height: 100vw
+          width: 50vw
+          height: 50vw
         background: #FB432A
         h1
           position: absolute
           top: 72px
-          left: 47px
+          left: 75px
         p
-          position: absolute
-          top: 172px
-          left: 47px 
           
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translateX(-50%)
+          font-size: 1.2vw
+          line-height: 1.4vw 
+          +hd()
+            font-size: 1vw
+            line-height: 20px
+          +mobile()
+            font-size: 2.5vw
+            line-height: 20px
+          +tablet()
+            regular 20px 25px
+        
         .podcherk
           position: absolute
           top: 126px
-          left: 49px
+          left: 79px
           
       .block-3
         position: relative
-        display: inline-block
+        float: left
         whitespace: nowrap
         width: 25vw
         height: 25vw
@@ -275,17 +310,29 @@ hd()
           width: 50vw
           height: 50vw
         +mobile()
-          width: 100vw
-          height: 100vw
+          width: 50vw
+          height: 50vw
         background: #B8B8B8
         h1
           position: absolute
           top: 72px
-          left: 77px
+          left: 75px
         p
+          
           position: absolute
-          top: 172px
-          left: 75px 
+          top: 50%
+          left: 50%
+          transform: translateX(-50%)
+          font-size: 1.2vw
+          line-height: 1.4vw 
+          +mobile()
+            font-size: 2.5vw
+            line-height: 20px
+          +tablet()
+            regular 20px 25px
+          +hd()
+            font-size: 1vw
+            line-height: 20px
         
         .podcherk
           position: absolute
@@ -294,7 +341,7 @@ hd()
           
       .block-4
         position: relative
-        display: inline-block
+        float: left
         whitespace: nowrap
         width: 25vw
         height: 25vw
@@ -302,22 +349,43 @@ hd()
           width: 50vw
           height: 50vw
         +mobile()
-          width: 100vw
-          height: 100vw
+          width: 50vw
+          height: 50vw
         background: #A7A7A7
         h1
           position: absolute
-          top: 20%
+          top: 72px
           left: 75px
         p
+          
           position: absolute
-          top: 172px
-          left: 75px 
+          top: 50%
+          left: 50%
+          transform: translateX(-50%)
+          font-size: 1.2vw
+          line-height: 1.4vw 
+          +hd()
+            font-size: 1vw
+            line-height: 20px
+          +mobile()
+            font-size: 2.5vw
+            line-height: 20px
+          +tablet()
+            regular 20px 25px
         
         .podcherk
           position: absolute
           top: 126px
           left: 79px
+  
+
+.wrapper
+  widht: 100%
+  overflow: hidden
+  max-width: 1440px
+  position: relative
+  margin: 0 auto
+  
   
   .ourclients
     background-color: #F4F4F4
