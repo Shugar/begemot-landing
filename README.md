@@ -1,4 +1,11 @@
 # Begemot-landing
+
+We use:
+  -nodejs
+  -npm
+  -bower
+  -brunch
+
 How to install: 
 ```sh
 npm install
