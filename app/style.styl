@@ -71,13 +71,14 @@ hd()
   height: 1024px
   min-height: 600px
   height: 100vh
-  background: #FB4739
+  background-color: rgb(255, 69, 53)
   background: url('../images/background-head.jpg') no-repeat
   background-size: cover
   +mobile()
-    background: url('../images/123.png') no-repeat #FB4739
+    background: url('../images/123.png') no-repeat
     background-size: cover
-    background-position: -120% 0%
+    background-position: -120% 0%    
+    background-color: rgb(255, 69, 53)
   .container
     // background: url('../images/background-head.jpg') no-repeat
     // background-size: cover
@@ -127,19 +128,20 @@ hd()
       regular 20px 46px
       left: 35px
       line-height: 35px
-      
-      
 .howitworks
-    position: relative
     .how
       height: 432px
+      +mobile()
+        height: 80 vw
+        max-height: 580px
       .four
         position: absolute
         top: 72px
         left: 83px
         +mobile()
           display: none
-        
+        +tablet()
+          left: 60px
       h1
         width: 310px
         color: $black
@@ -147,34 +149,40 @@ hd()
         font-family: $helvetica
         font-weight: bold
         position: absolute
-        left: 499px
+        left: 35vw
         top: 72px
         +hd()
           bold 48px 48px
         +tablet()
-          left: 409px
+          left: 320px
         +mobile()
-          left: 43px
+          top: 10vw
+          left: 8vw
+          font-size: 7vw
+          width: 70vw
       p
         
         color: $black
         font-family: 'Open Sans', sans-serif
         font-weight: 100
-        regular: 16px 16px
-        line-height: 20px 
+        light 16px 15px
+        line-height: 30px 
         position: absolute
         top: 167px  
-        left: 501px
+        left: 35vw
+        width: 50vw
         +hd()
-          font-size: 16px 16px
+          light 21px 30px
         +tablet()
-          left: 410px
+          left: 320px
           font-size: 17px
           width: 45vw
+          top: 140px
         +mobile()
-          left: 45px
-          width: 76vw
-        
+          left: 8vw
+          width: 74vw
+          top: 24vw
+          light 4vw 6vw
       
     .steps
         font-family: $helvetica
@@ -186,32 +194,36 @@ hd()
           display: none
         .one
           position: absolute
-          top: 407px
-          left: 40px
+          bottom: 13px
+          left: 2vw
+          font-size: 1.3vw
         .two
           position: absolute
-          top: 407px
-          left: 400px
+          bottom: 13px
+          left: 27.2vw
+          font-size: 1.3vw
         .three
           position: absolute
-          top: 407px
-          left: 760px
+          bottom: 13px
+          left: 52vw
+          font-size: 1.3vw
         .four
           position: absolute
-          top: 407px
-          left: 1120px
+          bottom: 13px
+          left: 77vw
+          font-size: 1.3vw
       
     .blocks
-      width: 100vw
+      width: 100%
       height: 25vw
-      overflow: hidden
       whitespace: nowrap
+      overflow: hidden
       +tablet()
-        width: 100vw
+        width: 100%
         height: 100vw
       +mobile()
-        width: 100vw
-        height: 100vw
+        width: 100%
+        height: 400vw
       p
         font-family: 'Arial Regular', sans-serif
         font-weight: 100
@@ -222,303 +234,567 @@ hd()
         font-family: $helvetica
         font-size: 55px
         color: #fff
-        
+        +mobile()
+          font-size: 6vw
       .block-1
         position: relative
         float: left
         whitespace: nowrap
-        width: 25vw
+        width: 25%
         height: 25vw
+        background: #D8D8D8
         +tablet()
-          width: 50vw
+          width: 50%
           height: 50vw
         +mobile()
-          width: 50vw
-          height: 50vw
-        background: #D8D8D8
-        h1
-          position: absolute
-          top: 72px
-          left: 75px
-        p
-          
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translateX(-50%)
-          font-size: 1.2vw
-          line-height: 1.4vw 
+          width: 100%
+          height: 100vw
+        .block-container
+          max-width: 165px //Small-screen Ширина контента внутри блока 1
+          margin: 0 auto
           +hd()
-            font-size: 1vw
-            line-height: 20px
-          +mobile()
-            font-size: 2.5vw
-            line-height: 20px
+            max-width: 16vw //Максимальная ширина контента для широкоформатных мониторов
           +tablet()
-            regular 20px 25px
-        .podcherk
-          position: absolute
-          top: 126px
-          left: 79px
-          
+            max-width: 35vw //Тоже самое, только для планшетов
+            margin-top: 20px
+          +mobile()
+            max-width: 76vw //Для телефонов
+          h1
+            font-size: 4vw
+            width: 2vw
+            border-bottom: 0.4vw solid white
+            margin-top: 5.5vw
+            +mobile()
+              margin-top: 10vw
+              font-size: 15vw
+              border-bottom: none
+            +tablet()
+              margin-top: 40px
+              font-size: 7vw
+              border-bottom: none
+              width: 50px
+          p
+            transform: translateX(-50%)
+            font-size: 11px
+            line-height: 1.4vw
+            width: 0
+            margin-top: 2vw
+            +hd()
+              font-size: 15px
+              line-height: 20px
+              font-size: 1vw
+            +mobile()
+              font-size: 5vw
+              line-height: 6vw
+              margin-top: 18.5vw
+            +tablet()
+              font-size: 2.3vw
+              line-height: 4.4vw
+              margin-top: 8vw
       .block-2
         position: relative
         float: left
         whitespace: nowrap
-        width: 25vw
+        width: 25%
         height: 25vw
         +tablet()
-          width: 50vw
+          width: 50%
           height: 50vw
         +mobile()
-          width: 50vw
-          height: 50vw
+          width: 100%
+          height: 100vw
         background: #FB432A
-        h1
-          position: absolute
-          top: 72px
-          left: 75px
-        p
-          
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translateX(-50%)
-          font-size: 1.2vw
-          line-height: 1.4vw 
+        .block-container2
+          max-width: 203px
+          margin: 0 auto
           +hd()
-            font-size: 1vw
-            line-height: 20px
-          +mobile()
-            font-size: 2.5vw
-            line-height: 20px
+            max-width: 19.5vw
           +tablet()
-            regular 20px 25px
-        
-        .podcherk
-          position: absolute
-          top: 126px
-          left: 79px
-          
+            margin-top: 20px
+            max-width: 43vw
+          +mobile()
+            max-width: 84vw
+          h1
+            font-size: 4vw
+            width: 2vw
+            border-bottom: 0.4vw solid white
+            margin-top: 5.5vw
+            +mobile()
+              margin-top: 10vw
+              font-size: 15vw
+              border-bottom: none
+            +tablet()
+              font-size: 7vw
+              border-bottom: none
+              margin-top: 40px
+          p
+            transform: translateX(-50%)
+            font-size: 11px
+            line-height: 1.4vw
+            width: 0
+            margin-top: 2vw
+            +hd()
+              font-size: 15px
+              line-height: 20px
+              font-size: 1vw
+            +mobile()
+              font-size: 4.5vw
+              line-height: 6vw
+              margin-top: 18.5vw
+            +tablet()
+              font-size: 2.3vw
+              line-height: 4.4vw
+              margin-top: 8vw
       .block-3
         position: relative
         float: left
         whitespace: nowrap
-        width: 25vw
+        width: 25%
         height: 25vw
         +tablet()
-          width: 50vw
+          width: 50%
           height: 50vw
         +mobile()
-          width: 50vw
-          height: 50vw
+          width: 100%
+          height: 100vw
         background: #B8B8B8
-        h1
-          position: absolute
-          top: 72px
-          left: 75px
-        p
-          
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translateX(-50%)
-          font-size: 1.2vw
-          line-height: 1.4vw 
-          +mobile()
-            font-size: 2.5vw
-            line-height: 20px
-          +tablet()
-            regular 20px 25px
+        .block-container
+          max-width: 165px
+          margin: 0 auto
           +hd()
-            font-size: 1vw
-            line-height: 20px
-        
-        .podcherk
-          position: absolute
-          top: 126px
-          left: 79px
-          
+            max-width: 16vw
+          +tablet()
+            max-width: 35vw
+            margin-top: 20px
+          +mobile()
+            max-width: 76vw
+          h1
+            font-size: 4vw
+            width: 2vw
+            border-bottom: 0.4vw solid white
+            margin-top: 5.5vw
+            +mobile()
+              margin-top: 10vw
+              font-size: 15vw
+              border-bottom: none
+            +tablet()
+              margin-top: 40px
+              font-size: 7vw
+              border-bottom: none
+              width: 50px
+          p
+            transform: translateX(-50%)
+            font-size: 11px
+            line-height: 1.4vw
+            width: 0
+            margin-top: 2vw
+            +hd()
+              font-size: 15px
+              line-height: 20px
+              font-size: 1vw
+            +mobile()
+              font-size: 5vw
+              line-height: 6vw
+              margin-top: 18.5vw
+            +tablet()
+              font-size: 2.3vw
+              line-height: 4.4vw
+              margin-top: 8vw
       .block-4
         position: relative
         float: left
         whitespace: nowrap
-        width: 25vw
+        width: 25%
         height: 25vw
         +tablet()
-          width: 50vw
+          width: 50%
           height: 50vw
         +mobile()
-          width: 50vw
-          height: 50vw
+          width: 100%
+          height: 100vw
         background: #A7A7A7
-        h1
-          position: absolute
-          top: 72px
-          left: 75px
-        p
-          
-          position: absolute
-          top: 50%
-          left: 50%
-          transform: translateX(-50%)
-          font-size: 1.2vw
-          line-height: 1.4vw 
+        .block-container
+          max-width: 165px
+          margin: 0 auto
           +hd()
-            font-size: 1vw
-            line-height: 20px
-          +mobile()
-            font-size: 2.5vw
-            line-height: 20px
+            max-width: 16vw
           +tablet()
-            regular 20px 25px
-        
-        .podcherk
-          position: absolute
-          top: 126px
-          left: 79px
-  
-
-.wrapper
-  widht: 100%
-  overflow: hidden
-  max-width: 1440px
-  position: relative
-  margin: 0 auto
-  
-  
+            max-width: 35vw
+            margin-top: 20px
+          +mobile()
+            max-width: 76vw
+          h1
+            font-size: 4vw
+            width: 2vw
+            border-bottom: 0.4vw solid white
+            margin-top: 5.5vw
+            +mobile()
+              margin-top: 10vw
+              font-size: 15vw
+              border-bottom: none
+            +tablet()
+              margin-top: 40px
+              font-size: 7vw
+              border-bottom: none
+              width: 50px
+          p
+            transform: translateX(-50%)
+            font-size: 11px
+            line-height: 1.4vw
+            width: 0
+            margin-top: 2vw
+            +hd()
+              font-size: 15px
+              line-height: 20px
+              font-size: 1vw
+            +mobile()
+              font-size: 5vw
+              line-height: 6vw
+              margin-top: 18.5vw
+            +tablet()
+              font-size: 2.3vw
+              line-height: 4.4vw
+              margin-top: 8vw
   .ourclients
-    background-color: #F4F4F4
+    width: 100%
     display: inline-block
-    position: relative
-    height: 541px
-    min-width: 1440px
+    +tablet()
+      width: 100%
+    +mobile()
+      width: 100%
     .left-side
-      width: 720px
+      background-color: #F4F4F4
+      height: 37vw
+      width: 60vw
       font-family: $helvetica
       font-weight: 100
       color: #4A4A4A
       font-size: 35px
+      +small_screen
+        font-size: 10vw
+      +tablet()
+        width: 100%
+        height: 45vw
+      +mobile()
+        height: 85vw
+        width: 100%
       .text
-        width: 598px
+        width: 38vw
         position: absolute
-        top: 73px
-        left: 61px
-        line-height: 41px
+        top: 4vw
+        left: 4vw
+        font-size: 2.25vw
+        line-height: 2.9vw
+        +tablet()
+          width: 85vw
+          font-size: 3.2vw
+          line-height: 5vw
+          left: 8vw
+        +mobile()
+          width: 85vw
+          font-size: 5vw
+          line-height: 6vw
+          top: 10vw
+          left: 5vw
       .name
-        position: absolute
-        top: 459px
-        left: 61px
-        font-size: 15px
+        position: relative
+        left: 4vw
+        font-size: 1.3vw
+        top: 33vw
+        +tablet()
+          top: 38vw
+          font-size: 2vw
+          width: 200px
+          left: 8vw
+        +mobile()
+          position: relative
+          top: 72vw
+          font-size: 3.6vw
+          width: 200px
+          left: 5vw
         span
           font-weight: 500
     .right-side
+      height: 37vw
+      background: url('../images/kamino.png') no-repeat
       position: absolute
+      background-size: 100%
       top: 0
-      left: 720px
-      width: 720px
-  
-  .reasonsforyou
-    min-width: 1440px
-    position: relative
+      right: 0
+      width: 50%
+      +tablet()
+        display: none
+      +mobile()
+        display: none
+  .reasonsforyou 
     height: 998px
+    +tablet()
+      max-height: 1330px
+      height: 157vw
+      min-height: 1180px
+    +mobile()
+      min-height: 979px
+      width: 100%
+      height: 298vw
+      max-height: 1660px
+      
     .left-side
-      width: 720px
       position: absolute
       top: 102px
-      left: 67px
+      left: 3vw
+      img
+        width: 42vw
+      +tablet()
+        display: none
+      +mobile()
+        display: none
     .right-side
-      width: 720px
       position: absolute
-      left: 720px
+      left: 50%
       top: 98px
+      +tablet()
+        width: 85%
+        left: 0
+        margin-left: 60px
+      +mobile()
+        left: 0
+        margin-left: 8vw
+        width: 70vw
+        height: 1000px
+        display: block
+        position: absolute
+        
       h1
         font-family: $helvetica
         font-size: 48px
         font-weight: 600
         line-height: 58px
+        width: 400px
+        +tablet()
+          width: 85vw
+          bold 5vw 58px
+        +mobile()
+          bold 8vw 10vw
+          width: 66vw
       .text
         position: absolute
         left: 5px
+        +mobile()
+          max-width: 400px
+          width: 70vw
+          left: 0
+        +tablet()
+          left: 0
+          margin-top: 20px
+          
         .zagolovok
           font-family: $helvetica
           font-size: 20px
           margin-top: 34px
           margin-bottom: 25px
           color: #202020
+          +mobile()
+            bold 5vw 8vw
+            margin-bottom: 10px
+          +tablet()
+            bold 5.5vw 8vw
+            font-size: 3vw
+            margin-top: 5vw
+            margin-bottom: 0px
         .first
           margin-top: 40px
           margin-bottom: 30px
+          +mobile()
+            margin-bottom: 10px
+          +tablet()
+            margin-bottom: 0px
         p
           font-family: $helvetica
           font-size: 14px
           line-height: 16px
           color: #A3A0A0
+          +tablet()
+            light 2.2vw 3vw
+          +mobile()
+            width: 72vw 
+            light 3.5vw 4.8vw
+  
   
   .statistic
     background-color: #F4F4F4
-    min-width: 1440px
-    position: relative
     height: 527px
     font-family: $helvetica
+    min-height: 340px
+    height: 40vw
+    max-height: 480px
+    +tablet()
+      max-width: 890px
+      height: 537px
+      max-height: 537px
+    +mobile()
+      max-width: 699px
+      height: 85vw
+      min-height: 315px
+      max-height: 480px
     .one
       position: absolute
       top: 98px
-      left: 113px
+      left: 5vw
+      +tablet()
+        display: block
+        max-width: 890px
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 60px
+        min-width: 600px
+      +mobile()
+        display: block
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 8vw
+        width: 70vw
       .number
         float: left
         color: #262626
         font-weight: 600
         font-size: 40px
+        +mobile()
+          font-size: 8vw
+          width: 12vw
       .text
         margin-left: 9px
         margin-top: 4px
         float: right
         color: #4A4A4A
         font-size: 16px
-        
+        +tablet()
+          font-size: 24px
+          margin-top: 8px
+          float: none
+          margin-left: 60px
+        +mobile()
+          font-size: 5vw
+          margin-top: 1.5vw
+          float: none
+          margin-left: 60px
+          width: 57vw
     .two
       position: absolute
-      top: 76px
-      left: 487px
+      top: 4vw
+      left: 35vw
+      +tablet()
+        display: block
+        max-width: 890px
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 60px
+        min-width: 600px
+      +mobile()
+        display: block
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 8vw
+        width: 70vw
       .number
         float: left
         color: #262626
         font-weight: 600
         font-size: 95px
+        +mobile()
+          font-size: 8vw
+          width: 12vw
       .text
         margin-left: 9px
         margin-top: 4px
         float: right
         color: #4A4A4A
         font-size: 24px
-        
-        
+        +tablet()
+          font-size: 24px
+          float: none
+          margin-left: 130px
+          margin-top: 36px
+        +mobile()
+          font-size: 5vw
+          margin-top: 1.5vw
+          float: none
+          margin-left: 60px
+          width: 52vw
     .three
       position: absolute
-      top: 294px
-      left: 312px
+      top: 20vw
+      left: 20vw
+      +tablet()
+        display: block
+        max-width: 890px
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 60px
+        min-width: 600px
+      +mobile()
+        display: block
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 8vw
+        width: 70vw
       .number
         float: left
         color: #262626
         font-weight: 600
         font-size: 55px
+        +mobile()
+          font-size: 8vw
+          width: vw
       .text
         margin-left: 9px
         margin-top: 7px
         float: right
         color: #4A4A4A
         font-size: 16px
-        
+        +tablet()
+          font-size: 24px
+          margin-top: 15px
+          float: none
+          margin-left: 55px
+        +mobile()
+          font-size: 5vw
+          margin-top: 1.5vw
+          float: none
+          margin-left: 60px
+          width: 52vw
     .four
       position: absolute
-      top: 180px
-      left: 928px
+      top: 15vw
+      left: 50vw
+      +tablet()
+        display: block
+        max-width: 890px
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 60px
+        min-width: 600px
+      +mobile()
+        display: block
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 8vw
+        width: 70vw
       .number
         float: left
         color: #262626
         font-weight: 600
         font-size: 60px
+        +mobile()
+          font-size: 6vw
+          width: 31vw
       .text
         margin-top: 10px
         line-height: 20px
@@ -526,20 +802,60 @@ hd()
         float: right
         color: #4A4A4A
         font-size: 16px
-        
+        +tablet()
+          font-size: 24px
+          margin-top: 5px
+          float: none
+          margin-left: 290px
+          line-height: 26px
+        +mobile()
+          font-size: 3.8vw
+          margin-top: -0.5vw
+          float: none
+          margin-left: 60px
+          line-height: 4vw
+          width: 57vw
     .five
       position: absolute
-      top: 426px
-      left: 845px
+      top: 26vw
+      left: 55vw
+      +tablet()
+        min-width: 600px
+        display: block
+        max-width: 890px
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 60px
+      +mobile()
+        display: block
+        position: static
+        margin-top: 30px
+        float: left
+        margin-left: 8vw
+        width: 70vw
       .number
         float: left
         color: #262626
         font-weight: 600
         font-size: 90px
+        +mobile()
+          font-size: 8vw
+          width: 12vw
       .text
         margin-top: 6px
         margin-left: 4px
         float: right
         color: #4A4A4A
         font-size: 22px
-    
+        +tablet()
+          font-size: 24px
+          margin-top: 34px
+          float: none
+          margin-left: 120px
+        +mobile()
+          font-size: 5vw
+          margin-top: 1.5vw
+          float: none
+          margin-left: 60px
+          width: 52vw
