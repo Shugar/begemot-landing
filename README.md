@@ -1,10 +1,10 @@
 # Begemot-landing
 
 We use:
-  -nodejs
-  -npm
-  -bower
-  -brunch
+  - nodejs
+  - npm
+  - bower
+  - brunch
 
 How to install: 
 ```sh
