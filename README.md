@@ -1,4 +1,4 @@
-# begemot-landing
+# Begemot-landing
 How to install: 
 ```sh
 npm install
