@@ -12,12 +12,12 @@ npm install
 bower install
 ```
 
-To start server:
+to start server:
 ```sh
 brunch w -s
 ```
 
-To build:
+to build:
 
 ```sh
 brunch build
